@@ -4,6 +4,7 @@
 
 //Basic Edge data structure
 public class Edge {
+    
     var nearby: Vertex
     var weight: Int
     
@@ -15,6 +16,7 @@ public class Edge {
 
 //Basic vertex data structure
 public class Vertex {
+    
     var key: String? // The search value used to find paths
     var nearbyPaths: Array<Edge> //An arr that tracks the connection to other verticies
     
@@ -46,6 +48,4 @@ func processPathForSource(source: Vertex, destination: Vertex) -> Path? {
     //Begin graph traversion
     var frontier: Array<Path> = Array<Path>()
     var finalPaths: Array<Path> = Array<Path>()
-    
-    
 }
