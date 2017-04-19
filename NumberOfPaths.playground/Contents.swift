@@ -1,6 +1,11 @@
 // NOTE: - The following functionality assumes a two-dimensional collection has an identical number of rows and colums
 
-//Count all possible paths from top-left to of MxN matrix
+/*Count all possible paths from top-left to bottom-right of an MxN matrix: 
+ 
+ Ex: Start _ _ 
+     _   _   _
+     _   _   Finish
+ */
 
 public func arrayFromMandN(m: Int, n: Int) -> [[Int]]{
     
