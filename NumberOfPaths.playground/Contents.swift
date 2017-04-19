@@ -3,8 +3,8 @@
 //Count all possible paths from top-left to of MxN matrix
 
 public func arrayFromMandN(m: Int, n: Int) -> [[Int]]{
+    
     var rowArr = [[Int]()]
-
     for row in 0..<m {
         rowArr.append([])
         
@@ -14,7 +14,6 @@ public func arrayFromMandN(m: Int, n: Int) -> [[Int]]{
     }
     
     rowArr.popLast() //Remove last empty index
-    
     return rowArr
 }
 
