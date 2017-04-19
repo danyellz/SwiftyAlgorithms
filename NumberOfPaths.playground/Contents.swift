@@ -1,6 +1,4 @@
-//: Playground - noun: a place where people can play
-
-// NOTE: - The following functionality assumes a two-dimensional data object is has an identical number of rows and colums
+// NOTE: - The following functionality assumes a two-dimensional collection has an identical number of rows and colums
 
 //Count all possible paths from top-left to of MxN matrix
 
@@ -15,7 +13,7 @@ public func arrayFromMandN(m: Int, n: Int) -> [[Int]]{
         }
     }
     
-    rowArr.popLast()
+    rowArr.popLast() //Remove last empty index
     
     return rowArr
 }
@@ -52,6 +50,8 @@ public func numOfPathsForMxNRecursive(arr: inout [[Int]], r: Int, c: Int) -> Int
     
     return numOfPathsForMxNRecursive(arr: &arr, r: r + 1, c: c) + numOfPathsForMxNRecursive(arr: &arr, r: r, c: c + 1)
 }
+
+//DRIVER
 
 var arr = arrayFromMandN(m: 4, n: 4)
 
