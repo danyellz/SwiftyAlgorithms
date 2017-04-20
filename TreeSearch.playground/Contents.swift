@@ -20,8 +20,13 @@ class Node {
     }
 }
 
-public func searchTree(node: Node?, searchVal: Int) -> Bool? {
+func searchTree(node: Node?, searchVal: Int) -> Bool {
     
+    guard node!.searchVal != searchVal else {
+        return true
+    }
+
+    return searchTree(node: node!.leftBranch, searchVal: searchVal) || searchTree(node: node!.rightBranch, searchVal: searchVal)
     
     return false
 }
