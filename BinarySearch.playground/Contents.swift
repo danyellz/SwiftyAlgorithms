@@ -10,7 +10,7 @@ public func dynamicSearch<T: Comparable >(array: [T], search: T) -> Bool? {
         
         let midIndex = bottomIndex + (topIndex - bottomIndex) / 2
         
-        // Set a base case so once the centermost value == searched, return true.
+        // Set a base case so once the center index value == searched, return true.
         if array[midIndex] == search {
             return true
         } else if array[midIndex] > search {
@@ -46,7 +46,7 @@ public func recursiveSearch<T: Comparable >(array: [T], search: T, range: Range<
         return false
     }
     
-    if array[midIndex] == search { // Set a base case so once the centermost value == searched, return true.
+    if array[midIndex] == search { // Set a base case so once the center index value == searched, return true.
         return true
     } else if array[midIndex] > search {
         return recursiveSearch(array: array,
