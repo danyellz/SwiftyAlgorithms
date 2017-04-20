@@ -51,11 +51,11 @@ public func recursiveSearch<T: Comparable >(array: [T], search: T, range: Range<
     } else if array[midIndex] > search {
         return recursiveSearch(array: array,
                                search: search,
-                               range: range.lowerBound..<midIndex - 1) // Decrement from the top (middle)
+                               range: range.lowerBound..<midIndex - 1) // Decrement from the top index (middle)
     } else if array[midIndex] < search {
         return recursiveSearch(array: array,
                                search: search,
-                               range: midIndex + 1..<range.upperBound) //Increment form the bottom (middle)
+                               range: midIndex + 1..<range.upperBound) //Increment from the bottom index (middle)
     }
     
     return false
