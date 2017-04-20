@@ -46,23 +46,25 @@ func searchTree(node: Node?, searchVal: Int) -> Bool {
     if node?.value == searchVal {
         return true
     }
-        
-    /*NOTE: - This solution assumes that all left nodes are decreasing from their parent,
-     *while right nodes are increasing in value.
-     */
-//    else if (searchVal < node!.value) {
-//        return searchTree(node: node?.leftBranch, searchVal: searchVal)
-//    } else {
-//        return searchTree(node: node?.rightBranch, searchVal: searchVal)
-//    }
     
     /*
-     *NOTE: - LogN solution. Indifferent to increasing/decreasing values.
-     *Speed improvement above.
+     NOTE: - LogN solution. Indifferent to increasing/decreasing values.
+     Speed improvement above.
      */
     else {
         return searchTree(node: node?.leftBranch, searchVal: searchVal) || searchTree(node: node?.rightBranch, searchVal: searchVal)
     }
+    
+    /*
+     NOTE: - This solution assumes that all left nodes are decreasing from their parent,
+     while right nodes are increasing in value.
+     */
+    
+    //    else if (searchVal < node!.value) {
+    //        return searchTree(node: node?.leftBranch, searchVal: searchVal)
+    //    } else {
+    //        return searchTree(node: node?.rightBranch, searchVal: searchVal)
+    //    }
     
     return false
 }
