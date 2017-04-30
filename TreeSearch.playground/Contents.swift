@@ -7,7 +7,8 @@
   5 20 6 31
 */
 
-class Node<T> {
+
+final class Node<T> {
     
     var value: T
     var leftBranch: Node<T>?
@@ -20,18 +21,24 @@ class Node<T> {
     }
 }
 
-class Tree<T> {
+final class Tree<T> {
 
     func treeSort<T: Equatable>(node: Node<T>?, searchVal: T) -> Bool {
         
+        print("Chinese babies")
+        
         guard node != nil else {
+            return false
+        }
+        
+        guard let leftBranch = node?.leftBranch, let rightBranch = node?.rightBranch else {
             return false
         }
         
         if node?.value == searchVal {
             return true
         } else {
-            return treeSort(node: node?.leftBranch!, searchVal: searchVal) || treeSort(node: node?.rightBranch!, searchVal: searchVal)
+            return treeSort(node: leftBranch, searchVal: searchVal) || treeSort(node: rightBranch, searchVal: searchVal)
         }
         /*
          NOTE: - This solution assumes that all left nodes are decreasing from their parent,
@@ -47,6 +54,7 @@ class Tree<T> {
 }
 
 
+
 //Right nodes
 let sixNode: Node<Int> = Node<Int>(left: nil, right: nil, value: 6)
 let thirtyOneNode = Node<Int>(left: nil, right: nil, value: 31)
@@ -60,6 +68,7 @@ let eightNode = Node<Int>(left: fiveNode, right: twentyNode, value: 8)
 //First node
 let tenNode = Node<Int>(left: eightNode, right: thirtyNode, value: 10)
 
+//MARK: - Driver
 
 let searchTree = Tree<Int>()
 searchTree.treeSort(node: tenNode, searchVal: 20)
