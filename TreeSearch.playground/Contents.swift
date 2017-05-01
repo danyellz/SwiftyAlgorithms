@@ -25,8 +25,6 @@ final class Tree<T> {
 
     func treeSort<T: Equatable>(node: Node<T>?, searchVal: T) -> Bool {
         
-        print("Chinese babies")
-        
         guard node != nil else {
             return false
         }
@@ -40,9 +38,9 @@ final class Tree<T> {
         } else {
             return treeSort(node: leftBranch, searchVal: searchVal) || treeSort(node: rightBranch, searchVal: searchVal)
         }
+        
         /*
-         NOTE: - This solution assumes that all left nodes are decreasing from their parent,
-         while right nodes are increasing in value.
+         NOTE: - This solution is faster, but assumes that all left nodes are decreasing from their parent, while right nodes are increasing in value.
          */
         
         //    else if (searchVal < node!.value) {

@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
-    //1. Whats wrong with this code?
+//1. Whats wrong with this code?
     /*
      - The integer value was declared as a reference to an Int instead of an Int. Count should not be creating a reference in memory it is only used within a narrow scope, etc.
      - Alternative: count was initially declared as *count which created multiples of the value
@@ -24,30 +24,27 @@ int main(int argc, const char * argv[]) {
         
         if ([number compare:@2] == NSOrderedAscending){
             count++;
-            NSLog(@"%i", (long)count);
             stop = true;
         };
     }];
 
-    //2. What does the @dynamic keyword mean in objective-c and where is it typically used?
+//2. What does the @dynamic keyword mean in objective-c and where is it typically used?
     /*
-     - @dynamic means the gets/sets are not immediately created or needed at creation. It implies modification or implementation later on. See exhibit A.
+     - @dynamic means the gets/sets are not immediately created or needed at creation. It implies modification or implementation later on, within a child class. An example might be variables from the same instance, with several uses across a project. See exhibit A.
         
      - A:
          @property (retain) NSString * name;
          @dynamic name;
      
-     - (id)init { 
+     - init {
         
         NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-        [dictionary setObject:@"Yeezy" forKey:@"name"];
+        [dictionary setObject:@"Ed" forKey:@"name"];
+        [dictionary setObject:@"John" forKey:@"name"];
      }
      */
         
-        
-        
-        
-    //3. What is a property?
+//3. What is a property?
     //
     //
     //
