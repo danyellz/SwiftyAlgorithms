@@ -61,7 +61,7 @@ public func recursiveSearch<T: Comparable >(array: [T], search: T, range: Range<
     return false
 }
 
-let intArr = [1, 2, 3, 4, 5]
+let intArr = [1, 8, 3, 4, 5]
 let arr = ["cat", "dog", "squirrel", "person"]
 
 recursiveSearch(array: arr, search: "person", range: 0..<arr.count)

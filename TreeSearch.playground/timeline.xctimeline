@@ -3,7 +3,12 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/tieshowdaniels/Development/Algos/TreeSearch.playground#CharacterRangeLen=31&amp;CharacterRangeLoc=1870&amp;EndingLineNumber=71&amp;StartingLineNumber=71&amp;Timestamp=515298653.121102"
+         documentLocation = "file:///Users/tieshowdaniels/Development/Algos/TreeSearch.playground#CharacterRangeLen=31&amp;CharacterRangeLoc=1770&amp;EndingLineNumber=69&amp;StartingLineNumber=69&amp;Timestamp=515385596.812812"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "#CharacterRangeLen=1&amp;CharacterRangeLoc=480&amp;EndingColumnNumber=38&amp;EndingLineNumber=29&amp;StartingColumnNumber=9&amp;StartingLineNumber=29&amp;Timestamp=515385557.795404"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>

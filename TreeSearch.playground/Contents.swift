@@ -28,26 +28,24 @@ final class Tree<T> {
         guard node != nil else {
             return false
         }
-        
-        guard let leftBranch = node?.leftBranch, let rightBranch = node?.rightBranch else {
-            return false
-        }
-        
+
         if node?.value == searchVal {
             return true
         } else {
-            return treeSort(node: leftBranch, searchVal: searchVal) || treeSort(node: rightBranch, searchVal: searchVal)
+            return treeSort(node: node?.leftBranch, searchVal: searchVal) || treeSort(node: node?.rightBranch, searchVal: searchVal)
         }
         
         /*
-         NOTE: - This solution is faster, but assumes that all left nodes are decreasing from their parent, while right nodes are increasing in value.
+         NOTE:
+         - This solution is faster, but assumes that all left nodes are decreasing from their parent,
+         while right nodes are increasing in value. (e.g. a valid binary search tree)
          */
         
-        //    else if (searchVal < node!.value) {
-        //        return searchTree(node: node?.leftBranch, searchVal: searchVal)
-        //    } else {
-        //        return searchTree(node: node?.rightBranch, searchVal: searchVal)
-        //    }
+//        else if (searchVal < node?.value) {
+//            return searchTree(node: node?.leftBranch, searchVal: searchVal)
+//        } else {
+//            return searchTree(node: node?.rightBranch, searchVal: searchVal)
+//        }
     }
 }
 
@@ -69,6 +67,6 @@ let tenNode = Node<Int>(left: eightNode, right: thirtyNode, value: 10)
 //MARK: - Driver
 
 let searchTree = Tree<Int>()
-searchTree.treeSort(node: tenNode, searchVal: 20)
+searchTree.treeSort(node: tenNode, searchVal: 31)
 
 
