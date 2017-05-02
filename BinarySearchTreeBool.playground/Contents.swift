@@ -5,8 +5,8 @@
      10
      /\
     0  30
-    /   /\
-  -5   6 31
+    /   \
+  -5    31
 */
 
 final class Node {
@@ -26,19 +26,27 @@ final class Tree {
     
     func treeSort(newNode: Node?, searchVal: Range<Double>) -> Bool {
         
+        // If no node is available, it is technically a valid tree 
+        
         guard let node = newNode else {
             return true
         }
+        
+        // MARK: - Attributes
         
         let nodeVal = node.value
         let lower = searchVal.lowerBound
         let upper = searchVal.upperBound
         
-        print(nodeVal, searchVal)
-        
         if node.value <= lower || node.value > upper {
+            /*
+             If the node is beyond the bounds, it is immediatey invalid
+             */
             return false
         } else {
+            /*
+             If the node is within the bounds, continue on to the next node within range
+             */
             return treeSort(newNode: node.leftBranch, searchVal: lower..<nodeVal) && treeSort(newNode: node.rightBranch, searchVal: nodeVal..<upper)
         }
     }
@@ -48,7 +56,7 @@ final class Tree {
 //Right nodes
 let sixNode = Node(left: nil, right: nil, value: 6)
 let thirtyOneNode = Node(left: nil, right: nil, value: 31)
-let thirtyNode = Node(left: sixNode, right: thirtyOneNode, value: 30)
+let thirtyNode = Node(left: nil, right: thirtyOneNode, value: 30)
 
 //Left nodes
 let fiveNode = Node(left: nil, right: nil, value: -5)
